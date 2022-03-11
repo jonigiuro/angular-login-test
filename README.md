@@ -1,3 +1,7 @@
+# To test user this data:
+user: max.mustermann@gmail.com
+password: 1234
+
 # Login
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.

@@ -1,0 +1,62 @@
+<div class="modal modal--login">
+    <div class="modal__window">
+        <h3>Login</h3>
+        <ul *ngIf="orphan_errors" class="errors errors--orphan">
+            <li *ngFor="let orphanError of orphan_errors">{{ orphanError }}</li>
+        </ul>
+        <form [formGroup]="loginForm" (submit)="onSubmit()" class="form">
+            <fieldset class="form__fieldset">
+                <div class="form__row">
+                    <input class="form__input"
+                        [class.form__input--error]="loginForm.controls['email'].invalid && loginForm.controls['email'].touched"
+                        type="text"
+                        name="email"
+                        id="email"
+                        autocomplete="off"
+                        formControlName="email"
+                        required
+                        ngModel
+                        email>
+                    <label class="form__label bold" for="email">Email</label>
+                    <ul *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="errors errors--field">
+                        <li *ngIf="loginForm.controls['email'].errors?.['required']">
+                            Email is required
+                        </li>
+                        <li *ngIf="loginForm.controls['email'].errors?.['email']">
+                            Please enter a valid email
+                        </li>
+                    </ul>
+                </div>
+                <div class="form__row">
+                    <input class="form__input"
+                    [class.form__input--error]="loginForm.controls['password'].invalid && loginForm.controls['password'].touched"
+                    type="password"
+                    name="password"
+                    id="password"
+                    formControlName="password"
+                    required
+                    ngModel
+                    password>
+                    <label class="form__label bold" for="password">Password</label>
+                    <ul *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched"class="errors errors--field">
+                        <li *ngIf="loginForm.controls['password'].errors?.['required']">
+                            Password is required
+                        </li>
+                    </ul>
+                </div>
+            </fieldset>
+            <button class="form__submit bold" type="submit">
+                Login
+            </button>
+        </form>
+        <hr class="modal__hr">
+        <div class="helper-links">
+            <a (click)="showMessage('Forgot Password')" href="#">
+                Forgot Password?
+            </a>
+            <a (click)="showMessage('Have no account')"href="#">
+                Have no account?
+            </a>
+        </div>
+    </div>
+</div>

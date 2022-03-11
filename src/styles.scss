@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'src/style/global/normalize';
+@import 'src/style/global/helpers';
+@import 'src/style/global/variables';
+@import 'src/style/global/layout';
+@import 'src/style/global/typography';
+@import 'src/style/global/forms';
