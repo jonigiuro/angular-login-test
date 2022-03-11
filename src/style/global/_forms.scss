@@ -61,5 +61,11 @@
     color: $error;
     list-style: none;
     padding: 0;
-    margin: 0 0 30px;
+    margin: 0 0 0;
+
+    &--field {
+        position: absolute;
+        top: 100%;
+        right: 0;
+    }
 }

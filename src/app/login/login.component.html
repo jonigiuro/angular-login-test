@@ -1,7 +1,7 @@
 <div class="modal modal--login">
     <div class="modal__window">
         <h3>Login</h3>
-        <ul *ngIf="orphan_errors" class="errors errors--orphan">
+        <ul [@openClose]="orphan_errors.length ? 'open' : 'closed'" class="errors errors--orphan" [@inOutAnimation]>
             <li *ngFor="let orphanError of orphan_errors">{{ orphanError }}</li>
         </ul>
         <form [formGroup]="loginForm" (submit)="onSubmit()" class="form">
@@ -18,7 +18,7 @@
                         ngModel
                         email>
                     <label class="form__label bold" for="email">Email</label>
-                    <ul *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="errors errors--field">
+                    <ul [@swipeIn]="loginForm.controls['email'].invalid && loginForm.controls['email'].touched ? 'shown' : 'hidden'" class="errors errors--field">
                         <li *ngIf="loginForm.controls['email'].errors?.['required']">
                             Email is required
                         </li>
@@ -38,8 +38,8 @@
                     ngModel
                     password>
                     <label class="form__label bold" for="password">Password</label>
-                    <ul *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched"class="errors errors--field">
-                        <li *ngIf="loginForm.controls['password'].errors?.['required']">
+                    <ul [@swipeIn]="loginForm.controls['password'].invalid && loginForm.controls['password'].touched ? 'shown' : 'hidden'" class="errors errors--field">
+                        <li>
                             Password is required
                         </li>
                     </ul>
