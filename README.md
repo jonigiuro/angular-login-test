@@ -1,5 +1,5 @@
-# To test user this data:
-user: max.mustermann@gmail.com
+# To test user use this data:
+user: max.mustermann@gmail.com  
 password: 1234
 
 # Login
