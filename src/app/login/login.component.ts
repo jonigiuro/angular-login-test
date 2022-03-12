@@ -44,6 +44,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ]),
   ],
 })
+
 export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService

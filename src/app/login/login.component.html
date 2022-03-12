@@ -1,7 +1,7 @@
 <div class="modal modal--login">
     <div class="modal__window">
         <h3>Login</h3>
-        <ul [@openClose]="orphan_errors.length ? 'open' : 'closed'" class="errors errors--orphan" [@inOutAnimation]>
+        <ul [@openClose]="orphan_errors.length ? 'open' : 'closed'" class="errors errors--orphan">
             <li *ngFor="let orphanError of orphan_errors">{{ orphanError }}</li>
         </ul>
         <form [formGroup]="loginForm" (submit)="onSubmit()" class="form">
